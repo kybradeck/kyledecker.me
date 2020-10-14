@@ -1,0 +1,61 @@
+.book {
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+
+  .book-details {
+    width: 33%;
+    flex-shrink: 0;
+    position: sticky;
+    top: 1rem;
+    align-self: flex-start;
+  }
+
+  .book-cover {
+    max-width: 140px;
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.2);
+  }
+
+  .quotes {
+    columns: 2;
+    column-gap: 5%;
+  }
+
+  .quote {
+    margin-bottom: 1rem;
+    break-inside: avoid-column;
+    hyphens: auto;
+  }
+
+  .quote-page {
+    font-size: 0.8em;
+    color: var(--color-text-light);
+  }
+
+  .quote p {
+    display: inline;
+  }
+
+  .quote p::before {
+    content: "“";
+    position: absolute;
+    transform: translateX(-100%);
+  }
+
+  .quote p::after {
+    content: "”";
+  }
+
+  .book-author {
+    @extend %font-sans-extended;
+    color: var(--color-text-header);
+    font-size: 1em;
+    font-weight: 600;
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .book-title {
+    font-style: italic;
+  }
+}
